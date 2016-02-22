@@ -39,6 +39,10 @@
             this.mOutput_TXT = new System.Windows.Forms.TextBox();
             this.mPermutations_TXT = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.mTotalNrOfPossibilities_TXT = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.mChance_TXT = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // mNrOfDice_TXT
@@ -126,26 +130,64 @@
             this.mPermutations_TXT.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.mPermutations_TXT.Location = new System.Drawing.Point(3, 112);
+            this.mPermutations_TXT.Location = new System.Drawing.Point(3, 173);
             this.mPermutations_TXT.Multiline = true;
             this.mPermutations_TXT.Name = "mPermutations_TXT";
-            this.mPermutations_TXT.Size = new System.Drawing.Size(271, 333);
+            this.mPermutations_TXT.Size = new System.Drawing.Size(271, 272);
             this.mPermutations_TXT.TabIndex = 15;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 96);
+            this.label7.Location = new System.Drawing.Point(0, 157);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 13);
             this.label7.TabIndex = 16;
             this.label7.Text = "permutations";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(21, 93);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(109, 13);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "total nr. of possibilities";
+            // 
+            // mTotalNrOfPossibilities_TXT
+            // 
+            this.mTotalNrOfPossibilities_TXT.Location = new System.Drawing.Point(136, 90);
+            this.mTotalNrOfPossibilities_TXT.Name = "mTotalNrOfPossibilities_TXT";
+            this.mTotalNrOfPossibilities_TXT.Size = new System.Drawing.Size(138, 20);
+            this.mTotalNrOfPossibilities_TXT.TabIndex = 17;
+            this.mTotalNrOfPossibilities_TXT.Text = "0";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(46, 119);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(84, 13);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "chance to throw";
+            // 
+            // mChance_TXT
+            // 
+            this.mChance_TXT.Location = new System.Drawing.Point(136, 116);
+            this.mChance_TXT.Name = "mChance_TXT";
+            this.mChance_TXT.Size = new System.Drawing.Size(46, 20);
+            this.mChance_TXT.TabIndex = 19;
+            this.mChance_TXT.Text = "0";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(281, 451);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.mChance_TXT);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.mTotalNrOfPossibilities_TXT);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.mPermutations_TXT);
             this.Controls.Add(this.mOutput_TXT);
@@ -176,6 +218,10 @@
         private System.Windows.Forms.TextBox mOutput_TXT;
         private System.Windows.Forms.TextBox mPermutations_TXT;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox mTotalNrOfPossibilities_TXT;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox mChance_TXT;
     }
 }
 

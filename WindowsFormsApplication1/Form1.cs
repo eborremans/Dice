@@ -89,6 +89,7 @@ namespace WindowsFormsApplication1
             {
                 if (nrOfDice > 0)
                 {
+                    // trivial case for one die
                     if (nrOfDice == 1)
                     {
                         if (sum >= 1 && sum <= sidesPerDie)
@@ -98,20 +99,14 @@ namespace WindowsFormsApplication1
                     }
                     else
                     {
-                        // sum         = 4
-                        // nrOfDice    = 2
-                        // sidesperDie = 6
-                        // 1 + 3 => 1 + perm (sum - 1, nrOfDice - 1)
-                        // 2 + 2 => 2 + perm (sum - 2, nrOfDice - 1)
-                        // 3 + 1 => 3 + perm (sum - 3, nrOfDice - 1)
                         if (sum >= nrOfDice && sum <= nrOfDice * sidesPerDie)
                         {
-                            // for (int i = Math.Max(Math.Min(sum - sidesPerDie, sidesPerDie), 1); i <= Math.Min(sidesPerDie, sum - 1); i++)
                             for (int i = 1; i <= sidesPerDie; i++)
                             {
                                 List<string> permutations = calcPermutations(sum - i, nrOfDice - 1, sidesPerDie);
                                 int nrOfPermutations = permutations.Count();
 
+                                // Prepend i to the list of permutations found
                                 Debug.WriteLine("Prepending " + i + " to " + nrOfPermutations + " permutations");
                                 string separator = "-";
                                 for (int j = 0; j < nrOfPermutations; j++)
@@ -133,6 +128,7 @@ namespace WindowsFormsApplication1
             return result;
         }
 
+        // Repopulate the result fields
         public void recalcPermutations()
         {
             Debug.WriteLine("");
@@ -142,6 +138,8 @@ namespace WindowsFormsApplication1
             int sum = 0;
             int nrOfDice = 0;
             int sidesPerDie = 0;
+            double nrOfPossibilities = 0;
+            double chance = 0;
 
             try
             {
@@ -157,8 +155,13 @@ namespace WindowsFormsApplication1
             List<string> result = calcPermutations(sum, nrOfDice, sidesPerDie);
             mPermutations_TXT.Text = convertPermutationsToString(result);
             mNrOfWays_TXT.Text = "" + result.Count();
+            nrOfPossibilities = Math.Pow(sidesPerDie, nrOfDice);
+            mTotalNrOfPossibilities_TXT.Text = "" + nrOfPossibilities;
+            chance = result.Count() / nrOfPossibilities * 100;
+            mChance_TXT.Text = string.Format("{0:0.00}", chance) + "%";
         }
 
+        // Converts a List of string to a single string
         public string convertPermutationsToString(List<string> permutations)
         {
             string separator = "";
@@ -171,11 +174,9 @@ namespace WindowsFormsApplication1
             return result;
         }
 
+        // Repopulate the result fields
         public void recalculate()
         {
-            if (1 + 1 < 6)
-                return;
-
             int totalDots = 0;
             int nrOfDice = 0;
             int sidesPerDie = 0;
@@ -203,21 +204,21 @@ namespace WindowsFormsApplication1
         private void mNrOfDice_TXT_TextChanged(object sender, EventArgs e)
         {
             Debug.WriteLine("Nr Of Dice text changed: " + e.ToString());
-            recalculate();
+            //recalculate();
             recalcPermutations();
         }
 
         private void mSidesPerDie_TXT_TextChanged(object sender, EventArgs e)
         {
             Debug.WriteLine("Sides per Die text changed: " + e.ToString());
-            recalculate();
+            //recalculate();
             recalcPermutations();
         }
 
         private void mTotalDots_TXT_TextChanged(object sender, EventArgs e)
         {
             Debug.WriteLine("Total dots text changed: " + e.ToString());
-            recalculate();
+            //recalculate();
             recalcPermutations();
         }
 
