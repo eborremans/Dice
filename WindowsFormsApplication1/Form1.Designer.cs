@@ -36,6 +36,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.mNrOfWays_TXT = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.mOutput_TXT = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // mNrOfDice_TXT
@@ -109,11 +110,20 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "=";
             // 
+            // mOutput_TXT
+            // 
+            this.mOutput_TXT.Location = new System.Drawing.Point(6, 96);
+            this.mOutput_TXT.Multiline = true;
+            this.mOutput_TXT.Name = "mOutput_TXT";
+            this.mOutput_TXT.Size = new System.Drawing.Size(267, 349);
+            this.mOutput_TXT.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(288, 92);
+            this.ClientSize = new System.Drawing.Size(281, 451);
+            this.Controls.Add(this.mOutput_TXT);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.mNrOfWays_TXT);
@@ -138,6 +148,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox mNrOfWays_TXT;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox mOutput_TXT;
     }
 }
 

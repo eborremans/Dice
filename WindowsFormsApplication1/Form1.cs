@@ -31,9 +31,10 @@ namespace WindowsFormsApplication1
         // Recursive function to calculate the number of ways to throw 'totalNrOfDots' 
         // with 'nrOfDice' Dice with each 'sidePerDie' sides per die.
         //
-        public int numberOfWaysToThrow(int totalNrOfDots, int nrOfDice, int sidesPerDie)
+        public int numberOfWaysToThrow(int totalNrOfDots, int nrOfDice, int sidesPerDie, out string possibilities, bool start)
         {
             int nrOfWays = 0;
+            possibilities = "";
 
             // The trivial case of a single die
             if (nrOfDice == 1)
@@ -41,6 +42,7 @@ namespace WindowsFormsApplication1
                 if (totalNrOfDots >= 1 && totalNrOfDots <= sidesPerDie)
                 {
                     nrOfWays = 1;
+                    possibilities = "" + totalNrOfDots;
                 }
             }
             else
@@ -64,7 +66,9 @@ namespace WindowsFormsApplication1
                 nrOfWays = 0;
                 for (int i = Math.Min(nrOfDice * (sidesPerDie + 1) - totalNrOfDots, totalNrOfDots) - 1; i > 0; i--)
                 {
-                    nrOfWays += numberOfWaysToThrow(i, nrOfDice - 1, sidesPerDie);
+                    nrOfWays += numberOfWaysToThrow(i, nrOfDice - 1, sidesPerDie, out possibilities, false);
+                    possibilities = "" + i + possibilities + (start ? "\n" : "");
+                    Debug.WriteLine(possibilities);
                 }
                 Debug.WriteLine("nrOfWays     : " + nrOfWays);
             }
@@ -91,7 +95,10 @@ namespace WindowsFormsApplication1
                 Debug.WriteLine("Exception: " + e);
                 return; // Do not calc;
             }
-            mNrOfWays_TXT.Text = "" + numberOfWaysToThrow(totalDots, nrOfDice, sidesPerDie);
+
+            string possibilities = "";
+            mNrOfWays_TXT.Text = "" + numberOfWaysToThrow(totalDots, nrOfDice, sidesPerDie, out possibilities, true);
+            mOutput_TXT.Text = possibilities;
         }
 
         private void mNrOfDice_TXT_TextChanged(object sender, EventArgs e)
@@ -111,6 +118,7 @@ namespace WindowsFormsApplication1
             Debug.WriteLine("Total dots text changed: " + e.ToString());
             recalculate();
         }
+
     }
 
 
