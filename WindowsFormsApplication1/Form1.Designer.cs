@@ -37,6 +37,8 @@
             this.mNrOfWays_TXT = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.mOutput_TXT = new System.Windows.Forms.TextBox();
+            this.mPermutations_TXT = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // mNrOfDice_TXT
@@ -112,17 +114,40 @@
             // 
             // mOutput_TXT
             // 
-            this.mOutput_TXT.Location = new System.Drawing.Point(6, 96);
+            this.mOutput_TXT.Location = new System.Drawing.Point(296, 96);
             this.mOutput_TXT.Multiline = true;
             this.mOutput_TXT.Name = "mOutput_TXT";
             this.mOutput_TXT.Size = new System.Drawing.Size(267, 349);
             this.mOutput_TXT.TabIndex = 10;
+            this.mOutput_TXT.Visible = false;
+            // 
+            // mPermutations_TXT
+            // 
+            this.mPermutations_TXT.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mPermutations_TXT.Location = new System.Drawing.Point(3, 112);
+            this.mPermutations_TXT.Multiline = true;
+            this.mPermutations_TXT.Name = "mPermutations_TXT";
+            this.mPermutations_TXT.Size = new System.Drawing.Size(271, 333);
+            this.mPermutations_TXT.TabIndex = 15;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(12, 96);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 13);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "permutations";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(281, 451);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.mPermutations_TXT);
             this.Controls.Add(this.mOutput_TXT);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
@@ -149,6 +174,8 @@
         private System.Windows.Forms.TextBox mNrOfWays_TXT;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox mOutput_TXT;
+        private System.Windows.Forms.TextBox mPermutations_TXT;
+        private System.Windows.Forms.Label label7;
     }
 }
 
